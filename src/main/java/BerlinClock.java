@@ -6,19 +6,23 @@ public class BerlinClock {
 
         String[] clock  = new String[4];
 
+        int pos1 = 4;
+        int size1 = time.getMinute() % 5;
         StringBuilder minLastsRow = new StringBuilder();
-        for (int i = 0; i < 4; i++) {
-            minLastsRow.append(i <= time.getMinute()%5 -1 ? "0" : ".");
+        for (int i = 0; i < pos1; i++) {
+            minLastsRow.append(i <= size1 -1 ? "0" : ".");
         }
+        String s1 = minLastsRow.toString();
+        clock[3] = s1;
 
-        clock[3] = minLastsRow.toString();
-
+        int pos2 = 11;
+        int size2 = time.getMinute() / 5;
         StringBuilder minFirstRow = new StringBuilder();
-        for (int i = 0; i < 11; i++) {
-            minFirstRow.append(i <= time.getMinute()/5 -1 ? "0" : ".");
+        for (int i = 0; i < pos2; i++) {
+            minFirstRow.append(i <= size2 -1 ? "0" : ".");
         }
-
-        clock[2] = minFirstRow.toString();
+        String s2 = minFirstRow.toString();
+        clock[2] = s2;
 
         return clock;
     }
