@@ -8,22 +8,22 @@ public class BerlinClock {
 
         int pos1 = 4;
         int size1 = time.getMinute() % 5;
-        StringBuilder minLastsRow = new StringBuilder();
-        for (int i = 0; i < pos1; i++) {
-            minLastsRow.append(i <= size1 -1 ? "0" : ".");
-        }
-        String s1 = minLastsRow.toString();
+        String s1 = getRow(pos1, size1);
         clock[3] = s1;
 
         int pos2 = 11;
         int size2 = time.getMinute() / 5;
-        StringBuilder minFirstRow = new StringBuilder();
-        for (int i = 0; i < pos2; i++) {
-            minFirstRow.append(i <= size2 -1 ? "0" : ".");
-        }
-        String s2 = minFirstRow.toString();
+        String s2 = getRow(pos2, size2);
         clock[2] = s2;
 
         return clock;
+    }
+
+    private String getRow(int pos, int size) {
+        StringBuilder minLastsRow = new StringBuilder();
+        for (int i = 0; i < pos; i++) {
+            minLastsRow.append(i <= size -1 ? "0" : ".");
+        }
+        return minLastsRow.toString();
     }
 }
