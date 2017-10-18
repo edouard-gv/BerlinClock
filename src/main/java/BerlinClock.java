@@ -13,6 +13,13 @@ public class BerlinClock {
 
         clock[3] = minLastsRow.toString();
 
+        StringBuilder minFirstRow = new StringBuilder();
+        for (int i = 0; i < 11; i++) {
+            minFirstRow.append(i <= time.getMinute()/5 -1 ? "0" : ".");
+        }
+
+        clock[2] = minFirstRow.toString();
+
         return clock;
     }
 }
