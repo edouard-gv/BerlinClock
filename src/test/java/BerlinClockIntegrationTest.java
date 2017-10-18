@@ -24,7 +24,7 @@ public class BerlinClockIntegrationTest {
         assertThat(berlinClock.getTime(time)[0]).isEqualTo(".");
         assertThat(berlinClock.getTime(time)[1]).isEqualTo("0000");
         assertThat(berlinClock.getTime(time)[2]).isEqualTo("000.");
-        assertThat(berlinClock.getTime(time)[3]).isEqualTo("00000000000");
+        assertThat(berlinClock.getTime(time)[3]).isEqualTo("00R00R00R00");
         assertThat(berlinClock.getTime(time)[4]).isEqualTo("0000");
     }
 
@@ -35,7 +35,7 @@ public class BerlinClockIntegrationTest {
         assertThat(berlinClock.getTime(time)[0]).isEqualTo(".");
         assertThat(berlinClock.getTime(time)[1]).isEqualTo("00..");
         assertThat(berlinClock.getTime(time)[2]).isEqualTo("000.");
-        assertThat(berlinClock.getTime(time)[3]).isEqualTo("0000000....");
+        assertThat(berlinClock.getTime(time)[3]).isEqualTo("00R00R0....");
         assertThat(berlinClock.getTime(time)[4]).isEqualTo("00..");
     }
 

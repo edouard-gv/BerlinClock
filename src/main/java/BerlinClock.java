@@ -10,7 +10,7 @@ public class BerlinClock {
 
         clock[1]= getRow(4, time.getHour()/5);
         clock[2]= getRow(4, time.getHour()%5);
-        clock[3] = getRow(11, time.getMinute() / 5);
+        clock[3] = redify(getRow(11, time.getMinute() / 5));
         clock[4] = getRow(4, time.getMinute() % 5);
 
         return clock;
@@ -22,5 +22,13 @@ public class BerlinClock {
             minLastsRow.append(i <= pos -1 ? "0" : ".");
         }
         return minLastsRow.toString();
+    }
+
+    private String redify(String row) {
+        StringBuilder redRow = new StringBuilder();
+        for (int i = 0; i < row.length(); i++) {
+            redRow.append (row.charAt(i) == '0' && i%3 == 2 ? 'R' : row.charAt(i));
+        }
+        return redRow.toString();
     }
 }

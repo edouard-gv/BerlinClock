@@ -45,7 +45,7 @@ public class BerlinClockTest {
     @Test
     public void testFirstMinute59() {
         BerlinClock berlinClock = new BerlinClock();
-        assertThat(berlinClock.getTime(LocalTime.of(17, 59))[3]).isEqualTo("00000000000");
+        assertThat(berlinClock.getTime(LocalTime.of(17, 59))[3]).isEqualTo("00R00R00R00");
     }
 
     @Test
