@@ -48,5 +48,47 @@ public class BerlinClockTest {
         assertThat(berlinClock.getTime(LocalTime.of(17, 59))[2]).isEqualTo("00000000000");
     }
 
+    @Test
+    public void testFirstHours0() {
+        BerlinClock berlinClock = new BerlinClock();
+        assertThat(berlinClock.getTime(LocalTime.of(0, 59))[0]).isEqualTo("....");
+    }
+
+    @Test
+    public void testFirstHours23() {
+        BerlinClock berlinClock = new BerlinClock();
+        assertThat(berlinClock.getTime(LocalTime.of(23, 59))[0]).isEqualTo("0000");
+    }
+
+    @Test
+    public void testFirstHours4() {
+        BerlinClock berlinClock = new BerlinClock();
+        assertThat(berlinClock.getTime(LocalTime.of(4, 59))[0]).isEqualTo("....");
+    }
+
+    @Test
+    public void testFirstHours5() {
+        BerlinClock berlinClock = new BerlinClock();
+        assertThat(berlinClock.getTime(LocalTime.of(5, 59))[0]).isEqualTo("0...");
+    }
+
+
+    @Test
+    public void testLastHours0() {
+        BerlinClock berlinClock = new BerlinClock();
+        assertThat(berlinClock.getTime(LocalTime.of(0, 59))[1]).isEqualTo("....");
+    }
+
+    @Test
+    public void testLastHours4() {
+        BerlinClock berlinClock = new BerlinClock();
+        assertThat(berlinClock.getTime(LocalTime.of(4, 59))[1]).isEqualTo("0000");
+    }
+
+    @Test
+    public void testLastHours5() {
+        BerlinClock berlinClock = new BerlinClock();
+        assertThat(berlinClock.getTime(LocalTime.of(5, 59))[1]).isEqualTo("....");
+    }
 
 }

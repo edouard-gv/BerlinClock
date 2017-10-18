@@ -6,6 +6,8 @@ public class BerlinClock {
 
         String[] clock  = new String[4];
 
+        clock[0]= getRow(4, time.getHour()/5);
+        clock[1]= getRow(4, time.getHour()%5);
         clock[3] = getRow(4, time.getMinute() % 5);
         clock[2] = getRow(11, time.getMinute() / 5);
 
