@@ -31,4 +31,8 @@ public class BerlinClock {
         }
         return redRow.toString();
     }
+
+    public LocalTime parseTime(String[] berlinTime) {
+        return LocalTime.of(0,0);
+    }
 }
