@@ -46,15 +46,14 @@ public class BerlinClockIntegrationTest {
         assertThat(berlinClock.parseTime(berlinTime)).isEqualTo(LocalTime.of(0,0));
     }
 
-    //Les tests d'intégration qui suivent ne passent pas, c'est juste pour noter la direction
-    //@Test
+    @Test
     public void testParseJustBeforMidnight() throws Exception {
         BerlinClock berlinClock = new BerlinClock();
         String[] berlinTime = {".", "0000", "000.", "00R00R00R00", "0000"};
         assertThat(berlinClock.parseTime(berlinTime)).isEqualTo(LocalTime.of(23,59));
     }
 
-    //@Test
+    @Test
     public void testParseLeatTime() throws Exception {
         BerlinClock berlinClock = new BerlinClock();
         String[] berlinTime = {".", "00..", "000.", "00R00R0....", "00.."};

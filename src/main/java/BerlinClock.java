@@ -33,7 +33,9 @@ public class BerlinClock {
     }
 
     public LocalTime parseTime(String[] berlinTime) {
-        return LocalTime.of(0,0);
+        return LocalTime.of(
+                5*getSwitchPos(berlinTime[1])+getSwitchPos(berlinTime[2]),
+                5*getSwitchPos(berlinTime[3])+getSwitchPos(berlinTime[4]));
     }
 
     //should be private, default package to be unittested
