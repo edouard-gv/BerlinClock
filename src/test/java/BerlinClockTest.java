@@ -103,4 +103,25 @@ public class BerlinClockTest {
         assertThat(berlinClock.getTime(LocalTime.of(5, 59, 24))[0]).isEqualTo("0");
     }
 
+    @Test
+    public void testSwitchPosEmpty() {
+        assertThat(BerlinClock.getSwitchPos("....")).isEqualTo(0);
+    }
+
+    //Les tests suivants ne passent pas encore, j'écris juste mes spec.
+    //@Test
+    public void testSwitchPosFull() {
+        assertThat(BerlinClock.getSwitchPos("00000")).isEqualTo(5);
+    }
+
+    //@Test
+    public void testSwitchPosPartial() {
+        assertThat(BerlinClock.getSwitchPos("00..")).isEqualTo(2);
+    }
+
+    //@Test
+    public void testSwitchPosWithRed() {
+        assertThat(BerlinClock.getSwitchPos("00R..")).isEqualTo(3);
+    }
+
 }
