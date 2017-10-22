@@ -109,17 +109,17 @@ public class BerlinClockTest {
     }
 
     //Les tests suivants ne passent pas encore, j'écris juste mes spec.
-    //@Test
+    @Test
     public void testSwitchPosFull() {
         assertThat(BerlinClock.getSwitchPos("00000")).isEqualTo(5);
     }
 
-    //@Test
+    @Test
     public void testSwitchPosPartial() {
         assertThat(BerlinClock.getSwitchPos("00..")).isEqualTo(2);
     }
 
-    //@Test
+    @Test
     public void testSwitchPosWithRed() {
         assertThat(BerlinClock.getSwitchPos("00R..")).isEqualTo(3);
     }

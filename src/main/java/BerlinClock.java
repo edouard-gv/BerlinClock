@@ -38,7 +38,7 @@ public class BerlinClock {
 
     //should be private, default package to be unittested
     static int getSwitchPos(String str) {
-        return 0;
+        return (str.indexOf('.') >= 0? str.indexOf('.') : str.length() );
     }
 
 }
